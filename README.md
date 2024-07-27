@@ -67,8 +67,8 @@ luuqada lagu dhisay waa java program. waxaana isticmaalnay Spring framework.
 
 ## Authors
 
-- **Abdinasir** Ali
-- **Abdirahman** Hussein
+- **Ahmed** Abdullahi Ahmed C1210160
+- **Abdinasir** Mire Maxamuud C1211008
 
 ### Contributing
 
