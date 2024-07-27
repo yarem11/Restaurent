@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Reservation Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Reservation Details</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Reservation Information</h5>
+            <table class="table">
+                <tr>
+                    <th>First Name</th>
+                    <td th:text="${reservation.FirstName}"></td>
+                </tr>
+                <tr>
+                    <th>Second Name</th>
+                    <td th:text="${reservation.SecondName}"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td th:text="${reservation.Email}"></td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td th:text="${reservation.Phone}"></td>
+                </tr>
+                <tr>
+                    <th>Region</th>
+                    <td th:text="${reservation.Region}"></td>
+                </tr>
+                <tr>
+                    <th>District</th>
+                    <td th:text="${reservation.distract}"></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td th:text="${reservation.Address}"></td>
+                </tr>
+                <tr>
+                    <th>Reservation Date</th>
+                    <td th:text="${reservation.ReservationDate}"></td>
+                </tr>
+                <tr>
+                    <th>Reservation Time</th>
+                    <td th:text="${reservation.ReservationTime}"></td>
+                </tr>
+                <tr>
+                    <th>Choose Table</th>
+                    <td th:text="${reservation.ChooseTble}"></td>
+                </tr>
+                <tr>
+                    <th>Number of People</th>
+                    <td th:text="${reservation.ManyOfPeople}"></td>
+                </tr>
+                <tr>
+                    <th>Notes</th>
+                    <td th:text="${reservation.Notes}"></td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td th:text="${reservation.status}"></td>
+                </tr>
+            </table>
+            <a href="/customer-dashboard" class="btn btn-primary">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

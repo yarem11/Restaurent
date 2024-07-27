@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Reports</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/customer-dashboard">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer-dashboard/customerReporting">Reservation Management</a>
+                </li>
+                <li class="nav-item">
+                    <form action="/logout" method="post" class="form-inline">
+                        <button type="submit" class="btn btn-link nav-link">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <hr>
+
+    <!-- Page Content -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Reservation Reports of our customer</h2>
+        <br><br>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Recent Reservations</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>FirstName</th>
+                                <th>SecondName</th>
+                                <th>Phone</th>
+                                <th>Region</th>
+                                <th>ReservationDate</th>
+                                <th>ReservationTime</th>
+                                <th>ChooseTble</th>
+                                <th>ManyOfPeople</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="Reservation : ${reservations}">
+                                <td th:text="${Reservation.FirstName}"></td>
+                                <td th:text="${Reservation.SecondName}"></td>
+                                <td th:text="${Reservation.Phone}"></td>
+                                <td th:text="${Reservation.Region}"></td>
+                                <td th:text="${Reservation.ReservationDate}"></td>
+                                <td th:text="${Reservation.ReservationTime}"></td>
+                                <td th:text="${Reservation.ChooseTble}"></td>
+                                <td th:text="${Reservation.ManyOfPeople}"></td>
+                                <td>
+                                    <a class="btn btn-danger" th:href="@{/dashboard/reservationManagment/delete/{id}(id=${Reservation.id})}">Delete</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <p>&copy; 2024 Reservation System. All rights reserved.</p>
+    </footer>
+
+</div>
+
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>editableform</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .text-center{
+            font-size: 120px;
+            font-family: 'Kaushan Scribt', cursive;
+            font-style: italic;
+           }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center " >Editable Form</h2><br><hr><br>
+    <section>
+        <!-- Creating form -->
+        <form th:action="@{${reservation.id} != null ? '/dashboard/reservationManagment/' + ${reservation.id} + '/edit' : '/dashboard/reservationManagment'}" method="post" th:object="${reservation}">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="firstName">First Name</label>
+                    <input class="form-control" id="firstName" name="firstName" th:field="*{firstName}" required type="text">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="secondName">Second Name</label>
+                    <input class="form-control" id="secondName" name="secondName" th:field="*{secondName}" required type="text">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" name="email" th:field="*{email}" required type="email">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="phone">Phone</label>
+                <input class="form-control" id="phone" name="phone" th:field="*{phone}" required type="text">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="address">Address</label>
+                <input class="form-control" id="address" name="address" th:field="*{address}" type="text">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="reservationDate">Reservation Date</label>
+                    <input class="form-control" id="reservationDate" name="reservationDate" th:field="*{reservationDate}" required type="date">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="reservationTime">Reservation Time</label>
+                    <input class="form-control" id="reservationTime" name="reservationTime" th:field="*{reservationTime}" required type="time">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ChooseTble">Choose Table</label>
+                    <select class="form-control" id="ChooseTble" name="ChooseTble" th:field="*{ChooseTble}" required>
+                        <option value="">Select the Table</option>
+                        <option value="diner">Diner</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="breakfast">Break fast</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="manyOfPeople">How many people will you be with?</label>
+                    <input class="form-control" id="manyOfPeople" name="manyOfPeople" th:field="*{manyOfPeople}" required type="number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="notes">Notes</label>
+                <textarea class="form-control" id="notes" name="notes" th:field="*{notes}"></textarea>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="status">Status</label>
+                    <input class="form-control" id="status" name="status" th:field="*{status}" type="text">
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <button class="btn btn-primary" type="submit">Update</button>
+            </div>
+        </form>
+    </section>
+    <br><br>
+    <!-- Footer -->
+    <p style="text-align: center;">Waxan kuugu adeegi doona sida ugu dhaqsiyaha badan</p>
+    <p style="text-align: center;">&copy; Xuquuqda halkan wey xadidan tahay.</p>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

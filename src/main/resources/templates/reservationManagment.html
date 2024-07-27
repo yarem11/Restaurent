@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Bootstrap Navbar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Style for the pop-up notification */
+        .popup-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link active" href="/dashboard/reservationManagment">Reservation Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/reporting">Reporting</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- Page Content -->
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Reservation Management</h2>
+    <div th:if="${message}" id="popupMessage" class="alert alert-success popup-message" role="alert">
+        <p th:text="${message}"></p>
+    </div>
+    <br><br>
+</div>
+<section>
+    <table class="table table-centered">
+        <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>Phone</th>
+            <th>Region</th>
+            <th>ReservationDate</th>
+            <th>ReservationTime</th>
+            <th>ChooseTble</th>
+            <th>ManyOfPeople</th>
+            <th>Notes</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Reservation : ${reservations}">
+            <td th:text="${Reservation.FirstName}"></td>
+            <td th:text="${Reservation.Phone}"></td>
+            <td th:text="${Reservation.Region}"></td>
+            <td th:text="${Reservation.ReservationDate}"></td>
+            <td th:text="${Reservation.ReservationTime}"></td>
+            <td th:text="${Reservation.ChooseTble}"></td>
+            <td th:text="${Reservation.ManyOfPeople}"></td>
+            <td th:text="${Reservation.Notes}"></td>
+            <td th:text="${Reservation.status}"></td>
+            <td>
+                <!-- Update button -->
+                <a class="btn btn-primary" th:href="@{/dashboard/reservationManagment/{id}/edit(id=${Reservation.id})}">Update</a>
+                <a class="btn btn-danger" th:href="@{/dashboard/reservationManagment/delete/{id}(id=${Reservation.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <footer>
+        <p style="text-align: center;">Waxan kuugu adeegi doona sida ugu dhaqsiyaha badan</p>
+        <p style="text-align: center;">&copy; Xuquuqda halkan wey xadidan tahay.</p>
+    </footer>
+</section>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var popupMessage = document.getElementById('popupMessage');
+        if (popupMessage) {
+            popupMessage.style.display = 'block';
+            setTimeout(function() {
+                popupMessage.style.display = 'none';
+            }, 3000); // Hide after 3 seconds
+        }
+    });
+</script>
+</body>
+</html>

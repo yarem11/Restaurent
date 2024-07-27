@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Reservation Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-target="#navbarNav" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ProductPage">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="Registaretion-Reservation">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
+    <br><br>
+    <section>
+        <!-- Creating form -->
+        <form method="post" th:action="@{/save}">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="firstName">First Name</label>
+                    <input class="form-control" id="firstName" name="firstName" required type="text">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="secondName">Second Name</label>
+                    <input class="form-control" id="secondName" name="secondName" required type="text">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" name="email" required type="email">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="phone">Phone</label>
+                <input class="form-control" id="phone" name="phone" required type="text">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="region">Region</label>
+                    <select class="form-control" id="region" name="region" required>
+                        <option value="">Select the Region</option>
+                        <option  value="banadir">Banadir</option>
+                        <option value="mudug">Mudug</option>
+                        <option value="awdal">Awdal</option>
+                        <option value="bari">Bari</option>
+                        <option value="bakool">Bakool</option>
+                        <option value="bay">Bay</option>
+                        <option value="galgadud">Galgadud</option>
+                        <option value="gedo">Gedo</option>
+                        <option value="hiiraan">Hiiraan</option>
+                        <option value="jubbada_dhexe">Jubbada Dhexe</option>
+                        <option value="jubbada_hoose">Jubbada Hoose</option>
+                        <option value="shabeellaha_dhexe">Shabeellaha Dhexe</option>
+                        <option value="shabeellaha_hoose">Shabeellaha Hoose</option>
+                        <option value="sanaag">Sanaag</option>
+                        <option value="sool">Sool</option>
+                        <option value="togdheer">Togdheer</option>
+                        <option value="woqooyi_galbeed">Woqooyi Galbeed</option>
+                        <!-- Add more regions if needed -->
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="distract">District</label>
+                    <select class="form-control" id="distract" name="distract" required>
+                        <option value="">Select the District</option>
+                        <option value="wardhiigley">Wardhiigley</option>
+                        <option value="hodan">Hodan</option>
+                        <option value="waberi">Waberi</option>
+                        <option value="shangaani">Shangaani</option>
+                        <option value="shibis">Shibis</option>
+                        <option value="bondere">Bondhere</option>
+                        <option value="daynile">Daynile</option>
+                        <option value="dharkeynley">Dharkeynley</option>
+                        <option value="huriwaa">Huriwaa</option>
+                        <option value="kaxda">Kaxda</option>
+                        <option value="wadajir">Wadajir</option>
+                        <option value="yaaqshiid">Yaaqshiid</option>
+
+                        <!-- Mudug -->
+                        <option value="galkayo">Galkayo</option>
+                        <option value="hobyo">Hobyo</option>
+                        <option value="jariiban">Jariiban</option>
+                        <option value="harardhere">Harardhere</option>
+
+                        <!-- Awdal -->
+                        <option value="baki">Baki</option>
+                        <option value="borama">Borama</option>
+                        <option value="lughaya">Lughaya</option>
+                        <option value="saylac">Saylac</option>
+
+                        <!-- Bari -->
+                        <option value="bosaso">Bosaso</option>
+                        <option value="qalansiyood">Qalansiyood</option>
+                        <option value="bandar_beyla">Bandar Beyla</option>
+                        <option value="iskushuban">Iskushuban</option>
+
+                        <!-- Bakool -->
+                        <option value="xudur">Xudur</option>
+                        <option value="tiyeglow">Tiyeglow</option>
+                        <option value="rabdhure">Rabdhure</option>
+                        <option value="wajid">Wajid</option>
+
+                        <!-- Bay -->
+                        <option value="baidoa">Baidoa</option>
+                        <option value="burhakaba">Burhakaba</option>
+                        <option value="dinsoor">Dinsoor</option>
+                        <option value="qansax_dheere">Qansax Dheere</option>
+
+                        <!-- Galgadud -->
+                        <option value="dhusamareb">Dhusamareb</option>
+                        <option value="cadaado">Cadaado</option>
+                        <option value="ceel_buur">Ceel Buur</option>
+                        <option value="ceel_dheer">Ceel Dheer</option>
+
+                        <!-- Gedo -->
+                        <option value="garbahaarrey">Garbahaarrey</option>
+                        <option value="beled_hawo">Beled Hawo</option>
+                        <option value="baardheere">Baardheere</option>
+                        <option value="luuq">Luuq</option>
+
+                        <!-- Hiiraan -->
+                        <option value="beledweyne">Beledweyne</option>
+                        <option value="buuloburde">Buuloburde</option>
+                        <option value="jowhar">Jowhar</option>
+                        <option value="mahadday">Mahadday</option>
+
+                        <!-- Jubbada Dhexe -->
+                        <option value="bu'aale">Bu'aale</option>
+                        <option value="jilib">Jilib</option>
+                        <option value="saakow">Saakow</option>
+                        <option value="salagle">Salagle</option>
+
+                        <!-- Jubbada Hoose -->
+                        <option value="kismayo">Kismayo</option>
+                        <option value="jamame">Jamame</option>
+                        <option value="afmadow">Afmadow</option>
+                        <option value="badhadhe">Badhadhe</option>
+
+                        <!-- Shabeellaha Dhexe -->
+                        <option value="jowhar">Jowhar</option>
+                        <option value="bulo_burte">Bulo Burte</option>
+                        <option value="balcad">Balcad</option>
+                        <option value="adaley">Adaley</option>
+
+                        <!-- Shabeellaha Hoose -->
+                        <option value="marka">Marka</option>
+                        <option value="barawe">Barawe</option>
+                        <option value="qoryooley">Qoryooley</option>
+                        <option value="awdegle">Awdegle</option>
+
+                        <!-- Sanaag -->
+                        <option value="erigavo">Erigavo</option>
+                        <option value="garadag">Garadag</option>
+                        <option value="lasqoray">Lasqoray</option>
+                        <option value="el_afweyn">El Afweyn</option>
+
+                        <!-- Sool -->
+                        <option value="laas_caanood">Laas Caanood</option>
+                        <option value="taleh">Taleh</option>
+                        <option value="xudun">Xudun</option>
+                        <option value="hudun">Hudun</option>
+
+                        <!-- Togdheer -->
+                        <option value="burco">Burco</option>
+                        <option value="odweine">Odweine</option>
+                        <option value="buhoodle">Buhoodle</option>
+                        <option value="sheikh">Sheikh</option>
+
+                        <!-- Woqooyi Galbeed -->
+                        <option value="hargeisa">Hargeisa</option>
+                        <option value="berbera">Berbera</option>
+                        <option value="gabiley">Gabiley</option>
+                        <option value="salaxley">Salaxley</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="address">Address</label>
+                <input class="form-control" id="address" name="address" type="text">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="reservationDate">Reservation Date</label>
+                    <input class="form-control" id="reservationDate" name="reservationDate" required type="date">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="reservationTime">Reservation Time</label>
+                    <input class="form-control" id="reservationTime" name="reservationTime" required type="time">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ChooseTble">Choose Table</label>
+                    <select class="form-control" id="ChooseTble" name="ChooseTble" required>
+                        <option value="">Select the Table</option>
+                        <option value="diner">Diner</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="breakfast">Break fast</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="manyOfPeople">How many people will you be with?</label>
+                    <input class="form-control" id="manyOfPeople" name="manyOfPeople" required type="number">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="notes">Notes</label>
+                <textarea class="form-control" id="notes" name="notes"></textarea>
+            </div>
+
+            <button class="btn btn-primary" style="display: block; margin: 0 auto;" type="submit">Save</button>
+        </form>
+    </section>
+    <br><br>
+    <!-- Footer -->
+    <p style="text-align: center;">Waxan kuugu adeegi doona sida ugu dhaqsiyaha badan</p>
+    <p style="text-align: center;">&copy; Xuquuqda halkan wey xadidan tahay.</p>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

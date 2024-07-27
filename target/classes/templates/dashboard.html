@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-center">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link active" href="/dashboard/reservationManagment">Reservation
+                        Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/reporting">Reporting</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<section>
+    <!-- Table -->
+    <table class="table table-centered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>Phone</th>
+            <th>Region</th>
+            <th>ReservationDate</th>
+            <th>ReservationTime</th>
+            <th>ChooseTble</th>
+            <th>ManyOfPeople</th>
+            <th>Notes</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="reservation : ${reservations}">
+            <td th:text="${reservation.id}"></td>
+            <td th:text="${reservation.firstName}"></td>
+            <td th:text="${reservation.phone}"></td>
+            <td th:text="${reservation.region}"></td>
+            <td th:text="${reservation.reservationDate}"></td>
+            <td th:text="${reservation.reservationTime}"></td>
+            <td th:text="${reservation.chooseTble}"></td>
+            <td th:text="${reservation.manyOfPeople}"></td>
+            <td th:text="${reservation.notes}"></td>
+            <td th:text="${reservation.status}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <!-- footer -->
+    <x></x>="text-align: center;">&copy; Xuquuqda halkan wey xadidan tahay.</p>
+    </footer>
+</section>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

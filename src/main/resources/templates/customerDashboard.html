@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Customer Pages</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/customer-dashboard">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer-dashboard/customerReporting">Reservation Management</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<selection>
+    <!-- Page Content -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Customer Dashboard</h2>
+        <br><br>
+    </div>
+    <table class="table table-centar">
+        <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>SecondName</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Region</th>
+            <th>ReservationDate</th>
+            <th>ReservationTime</th>
+            <th>ChooseTble</th>
+            <th>ManyOfPeople</th>
+            <th>Notes</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Reservation : ${reservations}">
+            <td th:text="${Reservation.FirstName}"></td>
+            <td th:text="${Reservation.SecondName}"></td>
+            <td th:text="${Reservation.Email}"></td>
+            <td th:text="${Reservation.Phone}"></td>
+            <td th:text="${Reservation.Region}"></td>
+            <td th:text="${Reservation.ReservationDate}"></td>
+            <td th:text="${Reservation.ReservationTime}"></td>
+            <td th:text="${Reservation.ChooseTble}"></td>
+            <td th:text="${Reservation.ManyOfPeople}"></td>
+            <td th:text="${Reservation.Notes}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <!--    footer-->
+    <footer>
+        <p style="text-align: center;">Waxan kuugu adeegi doona sida ugu dhaqsiyaha badan</p>
+        <p style="text-align: center;">&copy; Xuquuqda halkan wey xadidan tahay.</p>
+    </footer>
+</selection>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
