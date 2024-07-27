@@ -69,11 +69,6 @@ luuqada lagu dhisay waa java program. waxaana isticmaalnay Spring framework.
 
 - **Abdinasir** Ali
 - **Abdirahman** Hussein
-- **Ahmed** Abdi
-- **Mudasir** Mohamed
-- **Ayub** Ali
-- **Zakaria** Ali
-- **Abdirahman** Mohamed
 
 ### Contributing
 
